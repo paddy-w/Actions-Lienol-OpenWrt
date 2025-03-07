@@ -10,6 +10,9 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 #
 
+# 屏蔽除 K3 之外的 bcm53xx 构建
+#sed -i '/TARGET_DEVICES += / { /phicomm-k3/! s/^/#/; }' target/linux/bcm53xx/image/Makefile
+
 # Modify default IP
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
