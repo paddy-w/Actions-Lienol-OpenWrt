@@ -29,3 +29,6 @@ sed -i 's/^\(.*luci\)/#&/' feeds.conf.default
 sed -i '$a src-git luci https://github.com/Lienol/openwrt-luci.git;22.03' feeds.conf.default
 #sed -i '$a src-git luci https://github.com/Lienol/openwrt-luci.git^db0ddd1' feeds.conf.default
 
+# 添加 luci-app-msd_lite
+echo 'src-git msd_lite https://github.com/bigtan/luci-app-msd_lite.git' >>feeds.conf.default
+#echo 'src-git msd_lite https://github.com/iii80/luci-app-msd.git' >>feeds.conf.default
