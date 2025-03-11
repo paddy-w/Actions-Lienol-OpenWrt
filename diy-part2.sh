@@ -54,9 +54,9 @@ git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci/luci-th
 # 删除自带 ddns-scripts
 rm -rf feeds/packages/net/ddns-scripts
 # 删除自带 ntfs-3g
-#rm -rf feeds/packages/utils/ntfs-3g
+rm -rf feeds/packages/utils/ntfs-3g
 # 删除自带 wsdd2
-#rm -rf feeds/packages/net/wsdd2
+rm -rf feeds/packages/net/wsdd2
 # 删除自带 tailscale
 rm -rf feeds/packages/net/tailscale
 # 删除自带 socat
@@ -90,9 +90,9 @@ function merge_package(){
 # 提取 ddns-scripts
 merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/ddns-scripts
 # 提取 ntfs-3g
-#merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/utils utils/ntfs-3g
+merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/utils utils/ntfs-3g
 # 提取 wsdd2
-#merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/wsdd2
+merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/wsdd2
 # 提取 tailscale
 merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
 # 提取 socat
