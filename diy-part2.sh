@@ -48,9 +48,6 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 # 拉取 OpenAppFilter、luci-app-oaf
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
-# 拉取 luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci/luci-theme-argon
-
 # 删除自带 ddns-scripts
 rm -rf feeds/packages/net/ddns-scripts
 # 删除自带 ntfs-3g
