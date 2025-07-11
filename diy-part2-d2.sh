@@ -60,7 +60,7 @@ git clone https://github.com/gtolog/openwrt-msd_lite.git package/msd_lite
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # 删除自带 ddns-scripts
-rm -rf feeds/packages/net/ddns-scripts
+#rm -rf feeds/packages/net/ddns-scripts
 # 删除自带 rust
 #rm -rf feeds/packages/lang/rust
 # 删除自带 tailscale
@@ -92,7 +92,7 @@ function merge_package(){
     cd "$rootdir"
 }
 # 提取 ddns-scripts
-merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/ddns-scripts
+#merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/ddns-scripts
 # 提取 rust
 #merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/lang lang/rust
 # 提取 tailscale
