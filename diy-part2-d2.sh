@@ -11,7 +11,7 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
 # 删除自带 golang
@@ -64,9 +64,7 @@ rm -rf feeds/packages/net/ddns-scripts
 # 删除自带 rust
 #rm -rf feeds/packages/lang/rust
 # 删除自带 tailscale
-rm -rf feeds/packages/net/tailscale
-# 删除自带 luci-app-socat
-rm -rf feeds/lienol/luci-app-socat
+#rm -rf feeds/packages/net/tailscale
 # 删除自带 luci-theme-material
 #rm -rf feeds/luci/themes/luci-theme-material
 # 删除 passwall-packages 中 hysteria
@@ -98,9 +96,7 @@ merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/pa
 # 提取 rust
 #merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/lang lang/rust
 # 提取 tailscale
-merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
-# 提取 luci-app-socat
-merge_package main https://github.com/chenmozhijin/luci-app-socat.git feeds/lienol luci-app-socat
+#merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
 # 提取 luci-theme-material
 #merge_package openwrt-23.05 https://github.com/openwrt/luci.git feeds/luci/themes themes/luci-theme-material
 # 提取 hysteria
