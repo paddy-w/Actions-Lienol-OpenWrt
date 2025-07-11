@@ -14,10 +14,6 @@
 #sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
-# 开启 WiFi
-sed -i 's/disabled=.*/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-#sed -i 's/ssid=.*/ssid=OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
 # 删除自带 golang
 rm -rf feeds/packages/lang/golang
 # 拉取 golang
