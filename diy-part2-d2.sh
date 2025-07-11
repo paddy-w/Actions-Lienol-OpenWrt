@@ -14,10 +14,18 @@
 sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
 #sed -i 's/192.168.1.1/192.168.8.1/g' package/base-files/files/bin/config_generate
 
+# 开启 WiFi
+sed -i 's/disabled=.*/disabled=0/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+#sed -i 's/ssid=.*/ssid=OpenWrt/g' package/kernel/mac80211/files/lib/wifi/mac80211.sh
+
 # 删除自带 golang
 rm -rf feeds/packages/lang/golang
 # 拉取 golang
 git clone https://github.com/sbwml/packages_lang_golang.git -b 24.x feeds/packages/lang/golang
+
+# 删除自带 autosamba
+rm -rf feeds/public/autosamba
+rm -rf package/public/autosamba
 
 # 删除自带 v2ray-geodata
 rm -rf feeds/packages/net/v2ray-geodata
@@ -42,23 +50,29 @@ git clone https://github.com/xiaorouji/openwrt-passwall.git package/passwall/luc
 # 拉取 ShadowSocksR Plus+
 #git clone https://github.com/fw876/helloworld.git -b master package/helloworld
 
+# 拉取锐捷认证
+git clone https://github.com/sbwml/luci-app-mentohust package/mentohust
+
+# 拉取 easytier、luci-app-easytier
+git clone https://github.com/EasyTier/luci-app-easytier.git package/easytier
+
 # 拉取 msd_lite、luci-app-msd_lite
+git clone https://github.com/gtolog/openwrt-msd_lite.git package/msd_lite
 #git clone https://github.com/gw826943555/openwrt_msd_lite.git package/msd_lite
 
 # 拉取 OpenAppFilter、luci-app-oaf
 git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
-# 拉取 luci-theme-argon
-git clone https://github.com/jerrykuku/luci-theme-argon.git package/luci/luci-theme-argon
-
 # 删除自带 ddns-scripts
 rm -rf feeds/packages/net/ddns-scripts
+# 删除自带 rust
+#rm -rf feeds/packages/lang/rust
 # 删除自带 tailscale
 rm -rf feeds/packages/net/tailscale
-# 删除自带 socat
-rm -rf feeds/packages/net/socat
 # 删除自带 luci-app-socat
 rm -rf feeds/lienol/luci-app-socat
+# 删除自带 luci-theme-material
+#rm -rf feeds/luci/themes/luci-theme-material
 # 删除 passwall-packages 中 hysteria
 #rm -rf package/passwall/packages/hysteria
 # 删除 passwall-packages 中 naiveproxy
@@ -85,14 +99,19 @@ function merge_package(){
 }
 # 提取 ddns-scripts
 merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/ddns-scripts
+# 提取 rust
+#merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/lang lang/rust
 # 提取 tailscale
 merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
-# 提取 socat
-merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/socat
 # 提取 luci-app-socat
 merge_package main https://github.com/chenmozhijin/luci-app-socat.git feeds/lienol luci-app-socat
+# 提取 luci-theme-material
+#merge_package openwrt-23.05 https://github.com/openwrt/luci.git feeds/luci/themes themes/luci-theme-material
 # 提取 hysteria
 #merge_package v5 https://github.com/sbwml/openwrt_helloworld.git package/passwall/packages hysteria
 # 提取 naiveproxy
-#merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
 #merge_package v5 https://github.com/sbwml/openwrt_helloworld.git package/passwall/packages naiveproxy
+#merge_package master https://github.com/kenzok8/small.git package/passwall/packages naiveproxy
+#merge_package master https://github.com/immortalwrt/packages.git package/passwall/packages net/naiveproxy
+# 提取 pdnsd-alt、upx
+merge_package main https://github.com/kenzok8/small-package.git package/small-package pdnsd-alt upx
