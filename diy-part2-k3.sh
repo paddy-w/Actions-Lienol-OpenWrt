@@ -95,7 +95,7 @@ function merge_package(){
 # 提取 ddns-scripts
 merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/ddns-scripts
 # 提取 dnsmasq
-merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git package/network/services package/network/services/dnsmasq
+merge_package openwrt-23.05 https://github.com/immortalwrt/openwrt.git package/network/services package/network/services/dnsmasq
 # 提取 tailscale
 #merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
 # 提取 luci-theme-argon
