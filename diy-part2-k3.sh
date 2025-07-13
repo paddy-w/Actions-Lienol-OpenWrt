@@ -68,8 +68,6 @@ rm -rf feeds/packages/net/ddns-scripts
 rm -rf package/network/services/dnsmasq
 # 删除自带 tailscale
 #rm -rf feeds/packages/net/tailscale
-# 删除自带 luci-app-socat
-#rm -rf feeds/lienol/luci-app-socat
 # 删除 passwall-packages 中 hysteria
 #rm -rf package/passwall/packages/hysteria
 # 删除 passwall-packages 中 naiveproxy
@@ -100,8 +98,6 @@ merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/pa
 merge_package openwrt-23.05 https://github.com/openwrt/packages.git package/network/services package/network/services/dnsmasq
 # 提取 tailscale
 #merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
-# 提取 luci-app-socat
-#merge_package main https://github.com/chenmozhijin/luci-app-socat.git feeds/lienol luci-app-socat
 # 提取 luci-theme-argon
 merge_package openwrt-23.05 https://github.com/sbwml/luci-theme-argon.git package/luci luci-theme-argon
 # 提取 hysteria
