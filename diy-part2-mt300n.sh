@@ -61,12 +61,10 @@ git clone https://github.com/destan19/OpenAppFilter.git package/OpenAppFilter
 
 # 删除自带 ddns-scripts
 rm -rf feeds/packages/net/ddns-scripts
-# 删除自带 rust
-#rm -rf feeds/packages/lang/rust
+# 删除自带 dnsmasq
+rm -rf package/network/services/dnsmasq
 # 删除自带 tailscale
-rm -rf feeds/packages/net/tailscale
-# 删除自带 luci-app-socat
-rm -rf feeds/lienol/luci-app-socat
+#rm -rf feeds/packages/net/tailscale
 # 删除自带 luci-theme-material
 #rm -rf feeds/luci/themes/luci-theme-material
 # 删除 passwall-packages 中 hysteria
@@ -95,12 +93,10 @@ function merge_package(){
 }
 # 提取 ddns-scripts
 merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/ddns-scripts
-# 提取 rust
-#merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/lang lang/rust
+# 提取 dnsmasq
+merge_package openwrt-23.05 https://github.com/immortalwrt/openwrt.git package/network/services package/network/services/dnsmasq
 # 提取 tailscale
-merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
-# 提取 luci-app-socat
-merge_package main https://github.com/chenmozhijin/luci-app-socat.git feeds/lienol luci-app-socat
+#merge_package openwrt-23.05 https://github.com/immortalwrt/packages.git feeds/packages/net net/tailscale
 # 提取 luci-theme-material
 #merge_package openwrt-23.05 https://github.com/openwrt/luci.git feeds/luci/themes themes/luci-theme-material
 # 提取 hysteria
